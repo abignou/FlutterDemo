@@ -11,6 +11,7 @@ import 'package:flutterscreen/NearByGateways.dart';
 import 'package:flutterscreen/exclusive_partners.dart';
 import 'package:flutterscreen/experience.dart';
 import 'package:flutterscreen/explore.dart';
+import 'package:flutterscreen/model/Airport.dart';
 import 'package:flutterscreen/model/ListItem.dart';
 import 'package:flutterscreen/more_services.dart';
 import 'package:flutterscreen/referwin.dart';
@@ -35,11 +36,17 @@ class MyApp extends StatelessWidget {
 }
 
 loadJson() async {
-  String data = await rootBundle.loadString('assets/json/airport.json');
-  var jsonResult = json.decode(data);
-  var jsonAirport = json.decode(jsonResult);
-  print(jsonResult);
-  print(jsonAirport);
+  // String data = await rootBundle.loadString('assets/json/airport.json');
+  // var jsonResult = json.decode(data);
+  // var jsonAirport = json.decode(jsonResult);
+  // print(jsonResult);
+  // print(jsonAirport);
+
+  /* String data = await DefaultAssetBundle.of(context)
+      .loadString("assets/flight_details.json");
+  Map<String, dynamic> userMap = jsonDecode(data);
+  print(data.toString());
+  var flightDetails = Airport.fromJson(userMap);*/
 }
 
 class MyHomePage extends StatefulWidget {
@@ -117,48 +124,249 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  Future abc() async {
+    print("Rohit1");
+    String data = await rootBundle.loadString("assets/json/airport.json");
+    Map<String, dynamic> userMap = jsonDecode(data);
+    var airport = Airport.fromJson(userMap);
+    print("FIRST $airport");
+    print("Rohit");
+    return airport;
+  }
 
+  var airPortName = 'Mumbai';
 
   @override
   Widget build(BuildContext context) {
-    print("123" + widget.title);
-    return new Scaffold(
-        body: ListView.builder(
-      itemCount: 15,
-      itemBuilder: (BuildContext context, int index) {
-        if (index == 0) {
-          return Column(children: <Widget>[
-              HomeStateTopElement(),
-            ],
-          );
-        }
-        if (index == 1) {
-          return Column(
-            children: <Widget>[
-              FlightCard(
-                isClickable: false,
-                fullName: 'Rohit',
-              )
-            ],
-          );
-        }
+    return Scaffold(
+      body: projectWidget(),
+    );
+  }
 
-        if (index == 2) {
-          return Column(
-            children: <Widget>[AdaniAirport()],
-          );
-        }
+  void _showBottomSheet(BuildContext context) {
+    List<ListItem> myList = <ListItem>[];
+    myList.add(ListItem(1, "Delhi"));
+    myList.add(ListItem(2, "Ahmedabad"));
+    myList.add(ListItem(3, "Goa"));
+    myList.add(ListItem(4, "Mumbai"));
+    myList.add(ListItem(5, "Lucknow"));
+    myList.add(ListItem(6, "Bangalore"));
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Container(
+            color: Color.fromRGBO(0, 0, 0, 0.001),
+            child: GestureDetector(
+              onTap: () {
+                print(myList.length);
+                Navigator.of(context).pop();
+              },
+              child: DraggableScrollableSheet(
+                initialChildSize: 0.4,
+                minChildSize: 0.2,
+                maxChildSize: 0.75,
+                builder: (_, controller) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: const Radius.circular(25.0),
+                        topRight: const Radius.circular(25.0),
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.remove,
+                          color: Colors.grey[600],
+                        ),
+                        Expanded(
+                          child: ListView.builder(
+                            controller: controller,
+                            itemCount: myList.length,
+                            itemBuilder: (_, index) {
+                              return ElevatedButton(
+                                child: Text(
+                                  myList[index].name,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                ),
+                                onPressed: () {
+                                  selectedAirport(title: myList[index].name);
+                                  Navigator.pop(context);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  elevation: 5,
+                                ),
+                              );
+                              /*return Card(
+                                child: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Text(myList[index].name),
+                                ),
+                              );*/
+                              /*onTap: () {
+                                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(title:myList[index].name)));
 
-        if (index == 3) {
-          return Column(
-            children: <Widget>[Experience()],
-          );
-        }
-        if (index == 4) {
-          return Column(
-            children: <Widget>[BuildWidgetCategory()],
-          );
-        }
+                                HomeScreen(title:myList[index].name);
+                                Navigator.of(context).pop();
+                                print("Click event on Container"+myList[index].name);
+                              },
+                            );*/
+                              /*return Card(
+                              child: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Text(myList[index].name),
+                              ),
+                            );*/
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void selectedAirport({required String title}) {
+    setState(() {
+      airPortName = title;
+    });
+  }
+
+  Widget projectWidget() {
+    return FutureBuilder(
+      builder: (BuildContext context, snapshot) {
+        if (snapshot.data == null) {
+          return Text("Loading");
+        } else {
+          return ListView.builder(
+            itemCount: 15,
+            itemBuilder: (BuildContext context, int index) {
+              var airport = snapshot.data as Airport;
+              print(airport.airportDetail[index].type);
+              if (index == 0) {
+                return Column(
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      height: 180,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "assets/images/mumbai_airport.png"),
+                              fit: BoxFit.cover)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(children: <Widget>[
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "Chhatrapati Shivaji Internation Airport",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                ),
+                                CircleAvatar(
+                                  radius: 21,
+                                  backgroundColor: Colors.white,
+                                  child: CircleAvatar(
+                                      backgroundImage: NetworkImage(
+                                          'https://lh3.googleusercontent.com/a-/AAuE7mChgTiAe-N8ibcM3fB_qvGdl2vQ9jvjYv0iOOjB=s96-c'),
+                                      radius: 20.0),
+                                )
+                              ]),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: new GestureDetector(
+                              onTap: () {
+                                _showBottomSheet(context);
+                              },
+                              child: RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: airPortName,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    WidgetSpan(
+                                      child: Icon(
+                                        Icons.keyboard_arrow_down,
+                                        size: 22,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintStyle: TextStyle(fontSize: 15),
+                                hintText: 'Search',
+                                prefixIcon: Icon(
+                                  Icons.search,
+                                  color: Colors.grey,
+                                ),
+                                suffixIcon: Icon(Icons.mic, color: Colors.grey),
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.all(8),
+                              ),
+                              textAlignVertical: TextAlignVertical.center,
+                            ),
+                            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ],
+                );
+              }
+              if (index == 1) {
+                print("ad"+airport.airportDetail[0].flightInfo[0].destinationCode);
+                return FlightCard(
+                  isClickable: false,
+                  fullName: 'Rohit',
+                    flightInfo: airport.airportDetail[0].flightInfo,
+                );
+              }
+
+              if (index == 2) {
+                return AdaniAirport();
+              }
+
+              if (index == 3) {
+                return Experience();
+              }
+              if (index == 4) {
+                return BuildWidgetCategory();
+              }
 
         if (index == 5) {
           return Column(children: <Widget>[
@@ -199,6 +407,81 @@ class HomeScreenState extends State<HomeScreen> {
           // explore abdul
           return  Explore();
         }
+              if (index == 9) {
+                return MoreServices();
+              }
+              if (index == 10) {
+                return Column(
+                  children: <Widget>[NearByGateways()],
+                );
+              }
+              if (index == 11) {
+                return Column(
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      height: 200,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    "Discover with Adani",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                  Text(
+                                    "",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.blue,
+                                    ),
+                                    textAlign: TextAlign.right,
+                                  ),
+                                ]),
+                            Expanded(
+                              child: GridView.builder(
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 4),
+                                itemBuilder: (_, index) => Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    CircleAvatar(
+                                        backgroundImage: NetworkImage(
+                                            'https://lh3.googleusercontent.com/a-/AAuE7mChgTiAe-N8ibcM3fB_qvGdl2vQ9jvjYv0iOOjB=s96-c'),
+                                        radius: 30.0),
+                                    Text(
+                                      "Title",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.black,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ],
+                                ),
+                                itemCount: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              }
+              if (index == 12) {
+                return Explore();
+              }
 
         if (index == 13) {
           return Column(
@@ -218,6 +501,118 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
 
+              if (index == 13) {
+                return Column(
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      height: 180,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(children: <Widget>[
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  "Get 2 - minute Digital Approval ",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.left,
+                                ),
+                                Text(
+                                  "",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.blue,
+                                  ),
+                                  textAlign: TextAlign.right,
+                                ),
+                              ]),
+                          Expanded(
+                            child: ListView.builder(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              itemCount: 5,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  Card(
+                                child: Container(
+                                  width: 350,
+                                  padding: EdgeInsets.all(10),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Container(
+                                          width: 200,
+                                          alignment: Alignment.topLeft,
+                                          margin:
+                                              EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                          child: Column(children: <Widget>[
+                                            Align(
+                                              child: Text(
+                                                "Loyality Card",
+                                                style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.black,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              alignment: Alignment.topLeft,
+                                            ),
+                                            Align(
+                                              child: Text(
+                                                "Get reward worth \u20B9 2000 on your adani card",
+                                                style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.grey,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              alignment: Alignment.topLeft,
+                                            ),
+                                            Align(
+                                              child: Text(
+                                                "Know More".toUpperCase(),
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.blue,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              alignment: Alignment.topLeft,
+                                            ),
+                                          ]),
+                                        ),
+                                        Image.asset(
+                                          "assets/images/ic_card.png",
+                                          alignment: Alignment.center,
+                                          width: 120,
+                                        ),
+                                      ]),
+                                ),
+                                margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                              ),
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ],
+                );
+              }
+              if (index == 14) {
+                return ReferWin();
+              }
+              return Text('');
+            },
+          );
+        }
+      },
+      future: abc(),
+    );
+  }
 }
 
 class CategoryScreen extends StatelessWidget {

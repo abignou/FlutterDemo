@@ -1,3 +1,411 @@
-{"airportDetail":
-[{"type":"cardFlight","leftHeader":"Upcomingflight","rightHeader":"","flightInfo":[{"title":"IndigoAirlines6E-2423","subTitle":"PNR-VWU23K","status":"Confirmed","flightIcon":"http: //10.81.22.2/images/perfume.png","originCode":"BOM","originName":"Mumbai","originTerminal":"T1","originDate":"Mon, 26Mar","originTime":"12: 35","destinationCode":"BLR","destinationName":"Bengaluru","destinationTerminal":"T1","destinationTime":"14: 05","destinationDate":"Mon, 26Mar","duration":"1h50m","stop":"Non-Stop"}]},{"type":"cardAirportWalk","icon":"http: //10.81.22.2/images/loyaltycard.png","title":"AirportWalk","subTitle":"ExperiencetheAdaniairport"},{"type":"gridExperienceView","icon":"","leftHeader":"Experiences","rightHeader":"","column":3,"content":[{"icon":"http: //10.81.22.2/images/shopping.png","title":"Shopping"},{"icon":"http: //10.81.22.2/images/food.png","title":"Food"},{"icon":"http: //10.81.22.2/images/duty_free.png","title":"DutyFree"},{"icon":"http: //10.81.22.2/images/hotels.png","title":"Hotels"},{"icon":"http: //10.81.22.2/images/cabs.png","title":"Cabs"},{"icon":"http: //10.81.22.2/images/lounge.png","title":"Lounge"}]},{"type":"bubbleRowView","icon":"","leftHeader":"","rightHeader":"","content":["BaggageInformation","Deals&Offers","CarParking","FlightInformation","Train","Check-In"]},{"type":"carouselTextBanner","icon":"","leftHeader":"YourSafety: ourpriority","leftSubHeader":"COVID19Information","rightHeader":"SeeAll","content":[{"title":"NegativeRT-PCRCertificates","subTitle":"SomestatesmayrequirepassengerstocarrynegativeRT-PCRreports.Pleasecheckbeforetravelling","actiontitle":"READMORE","icon":"http: //10.81.22.2/images/banner1.png"},{"title":"NegativeRT-PCRCertificates","subTitle":"SomestatesmayrequirepassengerstocarrynegativeRT-PCRreports.Pleasecheckbeforetravelling","actiontitle":"READMORE","icon":"http: //10.81.22.2/images/banner1.png"},{"title":"NegativeRT-PCRCertificates","subTitle":"SomestatesmayrequirepassengerstocarrynegativeRT-PCRreports.Pleasecheckbeforetravelling","actiontitle":"READMORE","icon":"http: //10.81.22.2/images/banner1.png"},{"title":"NegativeRT-PCRCertificates","subTitle":"SomestatesmayrequirepassengerstocarrynegativeRT-PCRreports.Pleasecheckbeforetravelling","actiontitle":"READMORE","icon":"http: //10.81.22.2/images/banner1.png"},{"title":"NegativeRT-PCRCertificates","subTitle":"SomestatesmayrequirepassengerstocarrynegativeRT-PCRreports.Pleasecheckbeforetravelling","actiontitle":"READMORE","icon":"http: //10.81.22.2/images/banner1.png"}]},{"type":"carouselBanner","icon":"","leftHeader":"Offers&Discounts","rightHeader":"SeeAll","content":[{"icon":"http: //10.81.22.2/images/banner1.png","title":""},{"icon":"http: //10.81.22.2/images/banner1.png","title":""}]},{"type":"carouselView","icon":"","leftHeader":"Lastmin.Deals","rightHeader":"SeeAll","content":[{"icon":"http: //10.81.22.2/images/Product1.png","title":"EsteeLauderRevitalizingSup","price":10000,"discountPrice":5000},{"icon":"http: //10.81.22.2/images/Product2.png","title":"VersaceErosNatural","price":80000,"discountPrice":4000},{"icon":"http: //10.81.22.2/images/Product1.png","title":"EsteeLauderRevitalizingSup","price":10000,"discountPrice":5000},{"icon":"http: //10.81.22.2/images/Product2.png","title":"VersaceErosNatural","price":10000,"discountPrice":5000}],"layout":"rectangle"},{"type":"carouselView","icon":"","leftHeader":"Airports","rightHeader":"SeeAll","content":[{"icon":"http: //10.81.22.2/images/perfume.png","title":"Perfumes"},{"icon":"http: //10.81.22.2/images/confectionary.png","title":"Confectionary"},{"icon":"http: //10.81.22.2/images/makeup.png","title":"Makeup"},{"icon":"http: //10.81.22.2/images/retail.png","title":"Retail"}],"layout":"circle"},{"type":"carouselPartnerView","icon":"","leftHeader":"ExclusivePartners","rightHeader":"","content":[{"icon":"http: //10.81.22.2/images/Product1.png","header":"SPONSORED","title":"Luxuryshoppingattaxabsorbedprices","subTitle":"DiscoveraselectionofdesignerpiecespickedjustforyoubyourShoppingConcierge"},{"icon":"http: //10.81.22.2/images/Product2.png","header":"SPONSORED","title":"2hourFreeParking","subTitle":"SpendaminimumOf₹500byMastercardor₹750byotherpaymentmodestoenjoy2hoursfreeparking"},{"icon":"http: //10.81.22.2/images/Product1.png","header":"SPONSORED","title":"Luxuryshoppingattaxabsorbedprices","subTitle":"DiscoveraselectionofdesignerpiecespickedjustforyoubyourShoppingConcierge"},{"icon":"http: //10.81.22.2/images/Product2.png","header":"SPONSORED","title":"Luxuryshoppingattaxabsorbedprices","subTitle":"DiscoveraselectionofdesignerpiecespickedjustforyoubyourShoppingConcierge"}],"layout":"rectangle"},{"type":"carouselServiceView","icon":"","leftHeader":"MoreServices","rightHeader":"","content":[{"icon":"http: //10.81.22.2/images/Product1.png","title":"SpecialAssistance"},{"icon":"http: //10.81.22.2/images/Product2.png","title":"CurrencyExchange"},{"icon":"http: //10.81.22.2/images/Product1.png","title":"Spas&Salons"},{"icon":"http: //10.81.22.2/images/Product2.png","title":"SpecialAssistance"}],"layout":"rectangle"},{"type":"carouselHotelsView","icon":"","leftHeader":"NearbyHotels","leftSubHeader":"TopGatewaysNearyou","rightHeader":"SeeAll","content":[{"icon":"http: //10.81.22.2/images/Product1.png","title":"TajHolidaySantacruz","subTitle":"49mfromT1-ChhatrapatiShivajiInternationalAir…","price":8000,"discountPrice":4700},{"icon":"http: //10.81.22.2/images/Product1.png","title":"TajHolidaySantacruz","subTitle":"49mfromT1-ChhatrapatiShivajiInternationalAir…","price":8000,"discountPrice":4700},{"icon":"http: //10.81.22.2/images/Product1.png","title":"TajHolidaySantacruz","subTitle":"49mfromT1-ChhatrapatiShivajiInternationalAir…","price":8000,"discountPrice":4700},{"icon":"http: //10.81.22.2/images/Product1.png","title":"TajHolidaySantacruz","subTitle":"49mfromT1-ChhatrapatiShivajiInternationalAir…","price":8000,"discountPrice":4700}],"layout":"rectangle"},{"type":"gridAirportBrandView","icon":"","leftHeader":"DiscoverwithAirport","rightHeader":"","column":4,"content":[{"icon":"http: //10.81.22.2/images/shopping.png","title":"Lacoste"},{"icon":"http: //10.81.22.2/images/food.png","title":"Uber"},{"icon":"http: //10.81.22.2/images/duty_free.png","title":"Starbucks"},{"icon":"http: //10.81.22.2/images/hotels.png","title":"Booking.com"},{"icon":"http: //10.81.22.2/images/cabs.png","title":"Stemz"},{"icon":"http: //10.81.22.2/images/lounge.png","title":"WesternUnion"},{"icon":"http: //10.81.22.2/images/cabs.png","title":"UrbanDrive"},{"icon":"http: //10.81.22.2/images/lounge.png","title":"Haldirams"}]},{"type":"cardCityView","icon":"http: //10.81.22.2/images/loyaltycard.png","title":"DisvoverMoreinMumbai","actionTitle":"Explore"},{"type":"carouselLoyaltyView","icon":"","leftHeader":"NearbyHotels","leftSubHeader":"TopGatewaysNearyou","rightHeader":"SeeAll","content":[{"icon":"http: //10.81.22.2/images/Product1.png","title":"LoyaltyCard","subTitle":"Getrewardworth₹2000onyourAdanicard","actionTitle":"KNOWMORE"},{"icon":"http: //10.81.22.2/images/Product1.png","title":"LoyaltyCard","subTitle":"Getrewardworth₹2000onyourAdanicard","actionTitle":"KNOWMORE"},{"icon":"http: //10.81.22.2/images/Product1.png","title":"LoyaltyCard","subTitle":"Getrewardworth₹2000onyourAdanicard","actionTitle":"KNOWMORE"},{"icon":"http: //10.81.22.2/images/Product1.png","title":"LoyaltyCard","subTitle":"Getrewardworth₹2000onyourAdanicard","actionTitle":"KNOWMORE"}],"layout":"rectangle"},{"type":"banner","icon":"http: //10.81.22.2/images/loyaltycard.png","title":"OffersandDiscounts","subTitle":"Discoverthebestflightbookingoffersfordifferentcategories, usingexclusivepromocodesanddealsforadditionaldiscount","actionTitle":"Learnmore"},{"type":"banner","icon":"http: //10.81.22.2/images/offeranddiscounts.png","title":"LoyaltyCard","subTitle":"Discoverthebestflightbookingoffersfordifferentcategories, usingexclusivepromocodesanddealsforadditionaldiscount","actionTitle":"Learnmore"},{"type":"banner","icon":"http: //10.81.22.2/images/refernwin.png","title":"Refer&Win","subTitle":"Discoverthebestflightbookingoffersfordifferentcategories, usingexclusivepromocodesanddealsforadditionaldiscount","actionTitle":"Learnmore"}
-]}
+{
+  "airportDetail": [
+    {
+      "type": "cardFlight",
+      "leftHeader": "Upcoming flight",
+      "rightHeader": "",
+      "flightInfo": [
+        {
+          "title": "Indigo Airlines 6E-2423",
+          "subTitle": "PNR - VWU23K",
+          "status": "Confirmed",
+          "flightIcon": "http://10.81.22.2/images/perfume.png",
+          "originCode": "BOM",
+          "originName": "Mumbai",
+          "originTerminal": "T1",
+          "originDate": "Mon,26 Mar",
+          "originTime": "12:35",
+          "destinationCode": "BLR",
+          "destinationName": "Bengaluru",
+          "destinationTerminal": "T1",
+          "destinationTime": "14:05",
+          "destinationDate": "Mon,26 Mar",
+          "duration": "1h 50m",
+          "stop": "Non-Stop"
+        }
+      ]
+    },
+    {
+      "type": "cardAirportWalk",
+      "icon": "http://10.81.22.2/images/loyaltycard.png",
+      "title": "Airport Walk",
+      "subTitle": "Experience the Adani airport"
+    },
+    {
+      "type": "gridExperienceView",
+      "icon": "",
+      "leftHeader": "Experiences",
+      "rightHeader": "",
+      "column": 3,
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/shopping.png",
+          "title": "Shopping"
+        },
+        {
+          "icon": "http://10.81.22.2/images/food.png",
+          "title": "Food"
+        },
+        {
+          "icon": "http://10.81.22.2/images/duty_free.png",
+          "title": "Duty Free"
+        },
+        {
+          "icon": "http://10.81.22.2/images/hotels.png",
+          "title": "Hotels"
+        },
+        {
+          "icon": "http://10.81.22.2/images/cabs.png",
+          "title": "Cabs"
+        },
+        {
+          "icon": "http://10.81.22.2/images/lounge.png",
+          "title": "Lounge"
+        }
+      ]
+    },
+    {
+      "type": "bubbleRowView",
+      "icon": "",
+      "leftHeader": "",
+      "rightHeader": "",
+      "content": [
+        {
+          "icon": "",
+          "title": "Baggage Information"
+        },
+        {
+          "icon": "",
+          "title": "Deals & Offers"
+        },
+        {
+          "icon": "",
+          "title": "Car Parking"
+        },
+        {
+          "icon": "",
+          "title": "Flight Information"
+        },
+        {
+          "icon": "",
+          "title": "Train"
+        },
+        {
+          "icon": "",
+          "title": "Check-In"
+        }
+      ]
+    },
+    {
+      "type": "carouselTextBanner",
+      "icon": "",
+      "leftHeader": "Your Safety : our priority",
+      "leftSubHeader": "COVID 19 Information",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "title": "Negative RT-PCR Certificates",
+          "subTitle": "Some states may require passengers to carry negative RT-PCR reports. Please check before travelling",
+          "actiontitle": "READ MORE",
+          "icon": "http://10.81.22.2/images/banner1.png"
+        },
+        {
+          "title": "Negative RT-PCR Certificates",
+          "subTitle": "Some states may require passengers to carry negative RT-PCR reports. Please check before travelling",
+          "actiontitle": "READ MORE",
+          "icon": "http://10.81.22.2/images/banner1.png"
+        },
+        {
+          "title": "Negative RT-PCR Certificates",
+          "subTitle": "Some states may require passengers to carry negative RT-PCR reports. Please check before travelling",
+          "actiontitle": "READ MORE",
+          "icon": "http://10.81.22.2/images/banner1.png"
+        },
+        {
+          "title": "Negative RT-PCR Certificates",
+          "subTitle": "Some states may require passengers to carry negative RT-PCR reports. Please check before travelling",
+          "actiontitle": "READ MORE",
+          "icon": "http://10.81.22.2/images/banner1.png"
+        },
+        {
+          "title": "Negative RT-PCR Certificates",
+          "subTitle": "Some states may require passengers to carry negative RT-PCR reports. Please check before travelling",
+          "actiontitle": "READ MORE",
+          "icon": "http://10.81.22.2/images/banner1.png"
+        }
+      ]
+    },
+    {
+      "type": "carouselBanner",
+      "icon": "",
+      "leftHeader": "Offers & Discounts",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/banner1.png",
+          "title": ""
+        },
+        {
+          "icon": "http://10.81.22.2/images/banner1.png",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "type": "carouselView",
+      "icon": "",
+      "leftHeader": "Last min. Deals",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Estee Lauder Revitalizing Sup",
+          "price": 10000,
+          "discountPrice": 5000
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "title": "Versace Eros Natural",
+          "price": 80000,
+          "discountPrice": 4000
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Estee Lauder Revitalizing Sup",
+          "price": 10000,
+          "discountPrice": 5000
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "title": "Versace Eros Natural",
+          "price": 10000,
+          "discountPrice": 5000
+        }
+      ],
+      "layout": "rectangle"
+    },
+    {
+      "type": "carouselView",
+      "icon": "",
+      "leftHeader": "Airports",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/perfume.png",
+          "title": "Perfumes"
+        },
+        {
+          "icon": "http://10.81.22.2/images/confectionary.png",
+          "title": "Confectionary"
+        },
+        {
+          "icon": "http://10.81.22.2/images/makeup.png",
+          "title": "Make up"
+        },
+        {
+          "icon": "http://10.81.22.2/images/retail.png",
+          "title": "Retail"
+        }
+      ],
+      "layout": "circle"
+    },
+    {
+      "type": "carouselPartnerView",
+      "icon": "",
+      "leftHeader": "Exclusive Partners",
+      "rightHeader": "",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "header": "SPONSORED",
+          "title": "Luxury shopping at tax absorbed prices",
+          "subTitle": "Discover a selection of designer pieces picked just for you by our Shopping Concierge"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "header": "SPONSORED",
+          "title": "2 hour Free Parking",
+          "subTitle": "Spend a minimum Of ₹ 500 by Mastercard or ₹ 750 by other payment modes to enjoy 2 hours free parking"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "header": "SPONSORED",
+          "title": "Luxury shopping at tax absorbed prices",
+          "subTitle": "Discover a selection of designer pieces picked just for you by our Shopping Concierge"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "header": "SPONSORED",
+          "title": "Luxury shopping at tax absorbed prices",
+          "subTitle": "Discover a selection of designer pieces picked just for you by our Shopping Concierge"
+        }
+      ],
+      "layout": "rectangle"
+    },
+    {
+      "type": "carouselServiceView",
+      "icon": "",
+      "leftHeader": "More Services",
+      "rightHeader": "",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Special Assistance"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "title": "Currency Exchange"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Spas & Salons"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product2.png",
+          "title": "Special Assistance"
+        }
+      ],
+      "layout": "rectangle"
+    },
+    {
+      "type": "carouselHotelsView",
+      "icon": "",
+      "leftHeader": "Nearby Hotels",
+      "leftSubHeader": "Top Gateways Near you",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Taj Holiday Santacruz",
+          "subTitle": "49 m from T1 - Chhatrapati Shivaji International Air…",
+          "price": 8000,
+          "discountPrice": 4700
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Taj Holiday Santacruz",
+          "subTitle": "49 m from T1 - Chhatrapati Shivaji International Air…",
+          "price": 8000,
+          "discountPrice": 4700
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Taj Holiday Santacruz",
+          "subTitle": "49 m from T1 - Chhatrapati Shivaji International Air…",
+          "price": 8000,
+          "discountPrice": 4700
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Taj Holiday Santacruz",
+          "subTitle": "49 m from T1 - Chhatrapati Shivaji International Air…",
+          "price": 8000,
+          "discountPrice": 4700
+        }
+      ],
+      "layout": "rectangle"
+    },
+    {
+      "type": "gridAirportBrandView",
+      "icon": "",
+      "leftHeader": "Discover with Airport",
+      "rightHeader": "",
+      "column": 4,
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/shopping.png",
+          "title": "Lacoste"
+        },
+        {
+          "icon": "http://10.81.22.2/images/food.png",
+          "title": "Uber"
+        },
+        {
+          "icon": "http://10.81.22.2/images/duty_free.png",
+          "title": "Starbucks"
+        },
+        {
+          "icon": "http://10.81.22.2/images/hotels.png",
+          "title": "Booking.com"
+        },
+        {
+          "icon": "http://10.81.22.2/images/cabs.png",
+          "title": "Stemz"
+        },
+        {
+          "icon": "http://10.81.22.2/images/lounge.png",
+          "title": "Western Union"
+        },
+        {
+          "icon": "http://10.81.22.2/images/cabs.png",
+          "title": "Urban Drive"
+        },
+        {
+          "icon": "http://10.81.22.2/images/lounge.png",
+          "title": "Haldirams"
+        }
+      ]
+    },
+    {
+      "type": "cardCityView",
+      "icon": "http://10.81.22.2/images/loyaltycard.png",
+      "title": "Disvover More in Mumbai",
+      "actionTitle": "Explore"
+    },
+    {
+      "type": "carouselLoyaltyView",
+      "icon": "",
+      "leftHeader": "Nearby Hotels",
+      "leftSubHeader": "Top Gateways Near you",
+      "rightHeader": "See All",
+      "content": [
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Loyalty Card",
+          "subTitle": "Get reward worth ₹2000 on your Adani card",
+          "actionTitle": "KNOW MORE"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Loyalty Card",
+          "subTitle": "Get reward worth ₹2000 on your Adani card",
+          "actionTitle": "KNOW MORE"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Loyalty Card",
+          "subTitle": "Get reward worth ₹2000 on your Adani card",
+          "actionTitle": "KNOW MORE"
+        },
+        {
+          "icon": "http://10.81.22.2/images/Product1.png",
+          "title": "Loyalty Card",
+          "subTitle": "Get reward worth ₹2000 on your Adani card",
+          "actionTitle": "KNOW MORE"
+        }
+      ],
+      "layout": "rectangle"
+    },
+    {
+      "type": "banner",
+      "icon": "http://10.81.22.2/images/loyaltycard.png",
+      "title": "Offers and Discounts",
+      "subTitle": "Discover the best flight booking offers for different categories, using exclusive promocodes and deals for additional discount",
+      "actionTitle": "Learn more"
+    },
+    {
+      "type": "banner",
+      "icon": "http://10.81.22.2/images/offeranddiscounts.png",
+      "title": "Loyalty Card",
+      "subTitle": "Discover the best flight booking offers for different categories, using exclusive promocodes and deals for additional discount",
+      "actionTitle": "Learn more"
+    },
+    {
+      "type": "banner",
+      "icon": "http://10.81.22.2/images/refernwin.png",
+      "title": "Refer & Win",
+      "subTitle": "Discover the best flight booking offers for different categories, using exclusive promocodes and deals for additional discount",
+      "actionTitle": "Learn more"
+    }
+  ]
+}
