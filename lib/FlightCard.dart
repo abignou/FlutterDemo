@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterscreen/confirmed.dart';
+import 'package:flutterscreen/model/AirportDetail.dart';
+import 'package:flutterscreen/model/FlightInfo.dart';
 
 class FlightCard extends StatelessWidget {
   final String fullName;
   final bool isClickable;
+  List<FlightInfo> flightInfo;
 
-  FlightCard({required this.fullName, required this.isClickable});
+  FlightCard(
+      {required this.fullName,
+      required this.isClickable,
+      required this.flightInfo});
 
   _cityStyle(code, cityName, time, date) {
     return Expanded(
@@ -58,6 +64,7 @@ class FlightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(fullName);
     return GestureDetector(
       child: Card(
         elevation: 5.0,
@@ -73,7 +80,14 @@ class FlightCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    _cityStyle("BOM", "Mumbai (T1)", "12:35", "Mon, 24 Aug"),
+                    _cityStyle(
+                        flightInfo[0].originCode,
+                        flightInfo[0].originName +
+                            " (" +
+                            flightInfo[0].originTerminal +
+                            ")",
+                        flightInfo[0].originTime,
+                        flightInfo[0].originDate),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
                       child: Column(
@@ -86,7 +100,7 @@ class FlightCard extends StatelessWidget {
                                 color: Colors.grey,
                               ),
                               Text(
-                                "1 hr 50 Min",
+                                flightInfo[0].duration,
                                 style: TextStyle(
                                     color: Colors.grey, fontSize: 15.0),
                               ),
@@ -98,14 +112,19 @@ class FlightCard extends StatelessWidget {
                             ],
                           ),
                           Text(
-                            "Non - Stop",
+                            flightInfo[0].stop,
                             style:
                                 TextStyle(color: Colors.grey, fontSize: 12.0),
                           ),
                         ],
                       ),
                     ),
-                    _cityStyle("BLR", "Bengaluru (T1)", "14:06", "Mon, 24 Aug"),
+                    _cityStyle(flightInfo[0].destinationCode,  flightInfo[0].destinationName +
+                        " (" +
+                        flightInfo[0].destinationTerminal +
+                        ")",
+                        flightInfo[0].destinationTime,
+                        flightInfo[0].destinationDate),
                   ],
                 ),
                 Row(
