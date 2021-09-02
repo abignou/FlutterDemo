@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutterscreen/model/AirportDetail.dart';
 
 class Experience extends StatelessWidget {
+  final AirportDetail airportDetailinfo;
+  Experience({
+  required this.airportDetailinfo
+  });
+
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      Container(
-        width: double.infinity,
-        height: 220,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
-          child: Column(
-            children: <Widget>[
+    Padding(
+    padding: const EdgeInsets.all(15.0),
+      child: Wrap(children: <Widget>[
+
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Experiences",
+                      airportDetailinfo.leftHeader,
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
@@ -35,13 +38,16 @@ class Experience extends StatelessWidget {
               SizedBox(height: 15),
               Expanded(
                 child: GridView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4),
+                      crossAxisCount: airportDetailinfo.column),
                   itemBuilder: (_, index) => Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/blow.png'),
+                          backgroundImage: AssetImage(airportDetailinfo.content[index].icon!),
                           radius: 25.0),
                       /*Container(width: 60,
                       height: 60,
@@ -55,17 +61,17 @@ class Experience extends StatelessWidget {
                           image: AssetImage('assets/images/abuja.png'), fit: BoxFit.contain),
                     ),*/
                       SizedBox(height: 5),
-                      Text("Shopping"),
+                      Text(airportDetailinfo.content[index].title!),
                       SizedBox(height: 5)
                     ],
                   ),
-                  itemCount: 8,
+                  itemCount: airportDetailinfo.content.length,
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    ]);
+          )
+    )
+    ]
+        );
   }
 }

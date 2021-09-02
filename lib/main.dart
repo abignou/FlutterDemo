@@ -130,6 +130,7 @@ class HomeScreenState extends State<HomeScreen> {
     var airport = Airport.fromJson(userMap);
     return airport;
   }
+
   @override
   Widget build(BuildContext context) {
     var airPortName = widget.title;
@@ -137,30 +138,31 @@ class HomeScreenState extends State<HomeScreen> {
       body: projectWidget(),
     );
   }
+
   Widget projectWidget() {
     return FutureBuilder(
       builder: (BuildContext context, snapshot) {
         if (snapshot.data == null) {
           return Text("Loading");
         } else {
+          var airport = snapshot.data as Airport;
           return ListView.builder(
-            itemCount: 15,
+            itemCount: airport.airportDetail.length,
             itemBuilder: (BuildContext context, int index) {
               var airport = snapshot.data as Airport;
               print(airport.airportDetail[index].type);
               if (index == 0) {
                 return Column(
-                  children: <Widget>[
-                    HomeStateTopElement()
-                  ],
+                  children: <Widget>[HomeStateTopElement()],
                 );
               }
               if (index == 1) {
-                print("ad"+airport.airportDetail[0].flightInfo[0].destinationCode);
+                print("ad" +
+                    airport.airportDetail[0].flightInfo[0].destinationCode);
                 return FlightCard(
                   isClickable: false,
                   fullName: 'Rohit',
-                    flightInfo: airport.airportDetail[0].flightInfo,
+                  flightInfo: airport.airportDetail[0].flightInfo,
                 );
               }
 
@@ -169,74 +171,73 @@ class HomeScreenState extends State<HomeScreen> {
               }
 
               if (index == 3) {
-                return Experience();
+                return Experience(airportDetailinfo: airport.airportDetail[2]);
               }
               if (index == 4) {
                 return BuildWidgetCategory();
               }
 
-        if (index == 5) {
-          return Column(children: <Widget>[
-            CustomerSafetyDesc(),
-          ]);
-        }
-        if (index == 6) {
-          return Column(
-            children: <Widget>[
-              OffernDiscount(),
-            ],
-          );
-        }
-        if (index == 7) {
-          return Column(
-            children: <Widget>[
-              LastMinDeals(),
-            ],
-          );
-        }
-        if (index == 8) {
-          return ExclusivePartners();
-        }
+              if (index == 5) {
+                // return Column(children: <Widget>[
+                 return CustomerSafetyDesc(covidinfo: airport.airportDetail[4]);
+                // ]);
+              }
+              if (index == 6) {
+                return Column(
+                  children: <Widget>[
+                    OffernDiscount(),
+                  ],
+                );
+              }
+              if (index == 7) {
+                return Column(
+                  children: <Widget>[
+                    LastMinDeals(),
+                  ],
+                );
+              }
+              if (index == 8) {
+                return ExclusivePartners();
+              }
 
-        if (index == 9) {
-          // more services abdul
-          return  MoreServices();
-        }
-        if (index == 10) {
-          return Column(
-            children: <Widget>[NearByGateways()],
+              if (index == 9) {
+                // more services abdul
+                return MoreServices();
+              }
+              if (index == 10) {
+                return Column(
+                  children: <Widget>[NearByGateways()],
+                );
+              }
+              if (index == 11) {
+                return DiscoverWithAdani();
+
+              }
+              if (index == 12) {
+                // explore abdul
+                return Explore();
+              }
+              if (index == 13) {
+                return Column(
+                  children: <Widget>[
+                    Get2MinDigitalApproval(),
+                  ],
+                );
+              }
+              if (index == 14) {
+                return Column(
+                  children: <Widget>[ReferWin()],
+                );
+              }
+              return Text('Item :'+airport.airportDetail[index].type);
+            },
           );
         }
-        if (index == 11) {
-              DiscoverWithAdani();
-        }
-        if (index == 12) {
-          // explore abdul
-          return  Explore();
-        }
-        if (index == 13) {
-          return Column(
-            children: <Widget>[
-              Get2MinDigitalApproval(),
-            ],
-          );
-        }
-        if (index == 14) {
-          return Column(
-            children: <Widget>[ReferWin()],
-          );
-        }
-        return Text('');
       },
+      future: abc(),
     );
   }
-            },
-        future: abc(),
-          );
-        }
-
-  }
-
+}
 
 class CategoryScreen extends StatelessWidget {
   @override

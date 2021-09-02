@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterscreen/confirmed.dart';
+import 'package:flutterscreen/model/AirportDetail.dart';
 import 'package:flutterscreen/model/ListItem.dart';
-
 class HomeStateTopElement extends StatefulWidget{
   @override
   _HomeStateTopElementState createState() => _HomeStateTopElementState();
@@ -203,20 +203,25 @@ class _HomeStateTopElementState extends State<HomeStateTopElement> {
 }
 
 class CustomerSafetyDesc extends StatelessWidget{
+  final AirportDetail covidinfo;
+  CustomerSafetyDesc({
+    required this.covidinfo
+  });
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Column(children: <Widget>[
+    Container(
       width: double.infinity,
       height: 280,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(children: <Widget>[
-          setHeader("Your Safety : our priority", "See All"),
+          setHeader(covidinfo.leftHeader, covidinfo.rightHeader),
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              "COVID 19 Information",
+              covidinfo.leftSubHeader,
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
@@ -227,7 +232,7 @@ class CustomerSafetyDesc extends StatelessWidget{
           Expanded(
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: covidinfo.content.length,
                 itemBuilder: (BuildContext context, int index) => Card(
                   child: Container(
                       padding: EdgeInsets.all(2),
@@ -242,7 +247,7 @@ class CustomerSafetyDesc extends StatelessWidget{
                                   width: 200,
                                   child: Column(children: <Widget>[
                                     Text(
-                                      "Negative RT-PCR Certificates",
+                                      covidinfo.content[index].title!,
                                       style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,
@@ -250,14 +255,14 @@ class CustomerSafetyDesc extends StatelessWidget{
                                       textAlign: TextAlign.left,
                                     ),
                                     Text(
-                                        "\nDummy Text,Dummy Text,Dummy Text,Dummy Text,Dummy Text,Dummy Text",
+                                        covidinfo.content[index].subTitle!,
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.grey,
                                         ),
                                         textAlign: TextAlign.left),
                                     Align(child: Text(
-                                      "Read more ",
+                                      covidinfo.content[index].actionTitle!,
                                       style: TextStyle(
                                         fontSize: 15,
                                         color: Colors.blue,
@@ -281,7 +286,7 @@ class CustomerSafetyDesc extends StatelessWidget{
               )),
         ]),
       ),
-    );
+    )]);
   }
 
 }
@@ -468,48 +473,45 @@ class LastMinDeals extends StatelessWidget{
   }
 }
 class DiscoverWithAdani extends StatelessWidget{
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Column(children: <Widget>[
+      Padding(
+          padding: const EdgeInsets.all(15.0),
+    child:  Wrap(
       children: <Widget>[
-        Container(
-          width: double.infinity,
-          height: 250,
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
+        setHeader("Discover with Adani", ""),
+        Expanded(
+          child: GridView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4),
+            itemBuilder: (_, index) => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                setHeader("Discover with Adani", ""),
-                Expanded(
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4),
-                    itemBuilder: (_, index) => Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://lh3.googleusercontent.com/a-/AAuE7mChgTiAe-N8ibcM3fB_qvGdl2vQ9jvjYv0iOOjB=s96-c'),
-                            radius: 30.0),
-                        Text(
-                          "Title",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ],
-                    ),
-                    itemCount: 12,
+                CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://lh3.googleusercontent.com/a-/AAuE7mChgTiAe-N8ibcM3fB_qvGdl2vQ9jvjYv0iOOjB=s96-c'),
+                    radius: 30.0),
+                Text(
+                  "Title",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
                   ),
+                  textAlign: TextAlign.left,
                 ),
               ],
             ),
+            itemCount: 8,
           ),
-        )
+        ),
       ],
-    );
+    )
+    )]);
   }
 }
 class Get2MinDigitalApproval extends StatelessWidget{
@@ -615,19 +617,4 @@ setHeader(String leftContent, String rightContent) {
         ),
       ]);
 
-
-  /*return Container(
-    padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 15),
-    height: 50,
-    width: double.infinity,
-    alignment: Alignment.centerLeft,
-    child: Text(
-      "More Services",
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-        fontSize: 17,
-      ),
-    ),
-  );*/
 }

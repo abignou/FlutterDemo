@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterscreen/confirmed.dart';
-import 'package:flutterscreen/model/AirportDetail.dart';
 import 'package:flutterscreen/model/FlightInfo.dart';
 
 class FlightCard extends StatelessWidget {
@@ -11,8 +10,97 @@ class FlightCard extends StatelessWidget {
 
   FlightCard(
       {required this.fullName,
-      required this.isClickable,
-      required this.flightInfo});
+        required this.isClickable,
+        required this.flightInfo});
+
+  @override
+  Widget build(BuildContext context) {
+    print(fullName);
+    return GestureDetector(
+      child: Card(
+        elevation: 5.0,
+        margin: EdgeInsets.all(8.0),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+        child: Container(
+          // color: Colors.green,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Column(
+              children: [
+                Confirmed(),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    _cityStyle(
+                        flightInfo[0].originCode,
+                        flightInfo[0].originName +
+                            " (" +
+                            flightInfo[0].originTerminal +
+                            ")",
+                        flightInfo[0].originTime,
+                        flightInfo[0].originDate),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Container(
+                                width: 15,
+                                height: 1,
+                                color: Colors.grey,
+                              ),
+                              Text(
+                                flightInfo[0].duration,
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 15.0),
+                              ),
+                              Container(
+                                width: 15,
+                                height: 1,
+                                color: Colors.grey,
+                              ),
+                            ],
+                          ),
+                          Text(
+                            flightInfo[0].stop,
+                            style:
+                            TextStyle(color: Colors.grey, fontSize: 12.0),
+                          ),
+                        ],
+                      ),
+                    ),
+                    _cityStyle(
+                        flightInfo[0].destinationCode,
+                        flightInfo[0].destinationName +
+                            " (" +
+                            flightInfo[0].destinationTerminal +
+                            ")",
+                        flightInfo[0].destinationTime,
+                        flightInfo[0].destinationDate),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    FlightDetailChip(Icons.calendar_today, 'GetBoardingPass'),
+                    Container(
+                      width: 1,
+                      height: 30,
+                      color: Colors.grey,
+                    ),
+                    FlightDetailChip(Icons.calendar_today, 'WebCheckIn'),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   _cityStyle(code, cityName, time, date) {
     return Expanded(
@@ -58,92 +146,6 @@ class FlightCard extends StatelessWidget {
             height: 10.0,
           ),
         ],
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    print(fullName);
-    return GestureDetector(
-      child: Card(
-        elevation: 5.0,
-        margin: EdgeInsets.all(8.0),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Column(
-              children: [
-                Confirmed(),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    _cityStyle(
-                        flightInfo[0].originCode,
-                        flightInfo[0].originName +
-                            " (" +
-                            flightInfo[0].originTerminal +
-                            ")",
-                        flightInfo[0].originTime,
-                        flightInfo[0].originDate),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Container(
-                                width: 15,
-                                height: 1,
-                                color: Colors.grey,
-                              ),
-                              Text(
-                                flightInfo[0].duration,
-                                style: TextStyle(
-                                    color: Colors.grey, fontSize: 15.0),
-                              ),
-                              Container(
-                                width: 15,
-                                height: 1,
-                                color: Colors.grey,
-                              ),
-                            ],
-                          ),
-                          Text(
-                            flightInfo[0].stop,
-                            style:
-                                TextStyle(color: Colors.grey, fontSize: 12.0),
-                          ),
-                        ],
-                      ),
-                    ),
-                    _cityStyle(flightInfo[0].destinationCode,  flightInfo[0].destinationName +
-                        " (" +
-                        flightInfo[0].destinationTerminal +
-                        ")",
-                        flightInfo[0].destinationTime,
-                        flightInfo[0].destinationDate),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    FlightDetailChip(Icons.calendar_today, 'GetBoardingPass'),
-                    Container(
-                      width: 1,
-                      height: 30,
-                      color: Colors.grey,
-                    ),
-                    FlightDetailChip(Icons.calendar_today, 'WebCheckIn'),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
       ),
     );
   }
