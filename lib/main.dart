@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterscreen/AdaniAirport.dart';
-import 'package:flutterscreen/BuildWidgetCartegory.dart';
+import 'package:flutterscreen/BuildWidgetCategory.dart';
 import 'package:flutterscreen/FlightCard.dart';
 import 'package:flutterscreen/Homestateelement/HomestateListElement.dart';
 import 'package:flutterscreen/NearByGateways.dart';
@@ -12,7 +12,6 @@ import 'package:flutterscreen/exclusive_partners.dart';
 import 'package:flutterscreen/experience.dart';
 import 'package:flutterscreen/explore.dart';
 import 'package:flutterscreen/model/Airport.dart';
-import 'package:flutterscreen/model/ListItem.dart';
 import 'package:flutterscreen/more_services.dart';
 import 'package:flutterscreen/referwin.dart';
 
@@ -133,7 +132,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var airPortName = widget.title;
     return Scaffold(
       body: projectWidget(),
     );
@@ -179,13 +177,13 @@ class HomeScreenState extends State<HomeScreen> {
 
               if (index == 5) {
                 // return Column(children: <Widget>[
-                 return CustomerSafetyDesc(covidinfo: airport.airportDetail[4]);
+                 return CustomerSafetyDesc(covidInfo: airport.airportDetail[4]);
                 // ]);
               }
               if (index == 6) {
                 return Column(
                   children: <Widget>[
-                    OffernDiscount(),
+                    OffersAndDiscount(),
                   ],
                 );
               }
@@ -241,7 +239,7 @@ class HomeScreenState extends State<HomeScreen> {
 
 class CategoryScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext ctxt) {
+  Widget build(BuildContext context) {
     return new Scaffold(
         body: Center(
       child: Text('Category Screen'),

@@ -9,9 +9,8 @@ class Confirmed extends StatelessWidget {
         // color: Colors.red,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-          child: FlatButton(
+          child: TextButton(
             // color: Colors.blue,
-            padding: EdgeInsets.symmetric(vertical: 24),
             onPressed: () {},
             child: buildAirportSelector(
                 "Indigo Airlines 6E-2423", "PNR-VWU23k", Icons.flight_takeoff),
@@ -21,7 +20,7 @@ class Confirmed extends StatelessWidget {
     );
   }
 
-  Widget buildAirportSelector(walk, experience, IconData flight_takeoff) {
+  Widget buildAirportSelector(walk, experience, IconData flightTakeoff) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -31,16 +30,24 @@ class Confirmed extends StatelessWidget {
             Container(
               padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
               // width: 60,
-              child: Icon(Icons.airplanemode_active),
+              child: Icon(Icons.airplanemode_active,color: Colors.black,),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   walk,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                 ),
                 Text(
                   experience,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),

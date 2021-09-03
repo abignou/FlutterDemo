@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterscreen/confirmed.dart';
 import 'package:flutterscreen/model/AirportDetail.dart';
 import 'package:flutterscreen/model/ListItem.dart';
 class HomeStateTopElement extends StatefulWidget{
@@ -203,9 +202,9 @@ class _HomeStateTopElementState extends State<HomeStateTopElement> {
 }
 
 class CustomerSafetyDesc extends StatelessWidget{
-  final AirportDetail covidinfo;
+  final AirportDetail covidInfo;
   CustomerSafetyDesc({
-    required this.covidinfo
+    required this.covidInfo
   });
   @override
   Widget build(BuildContext context) {
@@ -217,11 +216,11 @@ class CustomerSafetyDesc extends StatelessWidget{
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(children: <Widget>[
-          setHeader(covidinfo.leftHeader, covidinfo.rightHeader),
+          setHeader(covidInfo.leftHeader, covidInfo.rightHeader),
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              covidinfo.leftSubHeader,
+              covidInfo.leftSubHeader,
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
@@ -232,7 +231,7 @@ class CustomerSafetyDesc extends StatelessWidget{
           Expanded(
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: covidinfo.content.length,
+                itemCount: covidInfo.content.length,
                 itemBuilder: (BuildContext context, int index) => Card(
                   child: Container(
                       padding: EdgeInsets.all(2),
@@ -247,7 +246,7 @@ class CustomerSafetyDesc extends StatelessWidget{
                                   width: 200,
                                   child: Column(children: <Widget>[
                                     Text(
-                                      covidinfo.content[index].title!,
+                                      covidInfo.content[index].title!,
                                       style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.black,
@@ -255,14 +254,14 @@ class CustomerSafetyDesc extends StatelessWidget{
                                       textAlign: TextAlign.left,
                                     ),
                                     Text(
-                                        covidinfo.content[index].subTitle!,
+                                        covidInfo.content[index].subTitle!,
                                         style: TextStyle(
                                           fontSize: 15,
                                           color: Colors.grey,
                                         ),
                                         textAlign: TextAlign.left),
                                     Align(child: Text(
-                                      covidinfo.content[index].actionTitle!,
+                                      covidInfo.content[index].actionTitle!,
                                       style: TextStyle(
                                         fontSize: 15,
                                         color: Colors.blue,
@@ -290,7 +289,7 @@ class CustomerSafetyDesc extends StatelessWidget{
   }
 
 }
-class OffernDiscount extends StatelessWidget{
+class OffersAndDiscount extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return
@@ -544,7 +543,7 @@ class Get2MinDigitalApproval extends StatelessWidget{
                           child: Column(children: <Widget>[
                             Align(
                               child: Text(
-                                "Loyality Card",
+                                "Loyalty Card",
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.black,

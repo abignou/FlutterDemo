@@ -6,7 +6,7 @@ import 'package:flutterscreen/model/FlightInfo.dart';
 class FlightCard extends StatelessWidget {
   final String fullName;
   final bool isClickable;
-  List<FlightInfo> flightInfo;
+  final List<FlightInfo> flightInfo;
 
   FlightCard(
       {required this.fullName,
@@ -133,22 +133,7 @@ class FlightCard extends StatelessWidget {
     );
   }
 
-  _boardingStyle(text) {
-    return Expanded(
-      child: Column(
-        children: <Widget>[
-          Icon(Icons.airplanemode_active),
-          Text(
-            text,
-            style: TextStyle(fontSize: 18.0),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-        ],
-      ),
-    );
-  }
+
 }
 
 class FlightDetailChip extends StatelessWidget {
@@ -159,7 +144,6 @@ class FlightDetailChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color chipBackgroundColor = Color(0x00000000);
 
     return RawChip(
       label: Text(label),

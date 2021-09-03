@@ -99,7 +99,7 @@ class Partner extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 10),
       child: Text(
-        "nhbfkhsdbfjhds fhfgf  j hfgf  fg gf shfgjf jhdshgsgfd jd ssd fgfh dsj gfjs dgf",
+        "Test Test Test Test Test Test Test Test Test Test Test Test",
         textAlign: TextAlign.left,
         maxLines: 3,
         style: TextStyle(color: Colors.black, fontSize: 14),

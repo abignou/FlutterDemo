@@ -11,19 +11,18 @@ class AdaniAirport extends StatelessWidget{
               vertical: 20.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
                 color: Colors.white,
                 height: 20,
               ),
-              FlatButton(
-                color: Colors.white,
-                padding: EdgeInsets.all(24),
+              TextButton(
                 onPressed: () {},
                 child: buildAirportSelector(
                     "Airport Walk","Experience the adani Airport",
                     Icons.flight_takeoff),
+
               ),
             ],
           ),
@@ -32,24 +31,32 @@ class AdaniAirport extends StatelessWidget{
     );
   }
 
-  Widget buildAirportSelector(walk,experience, IconData flight_takeoff) {
-    return Row(
+  Widget buildAirportSelector(walk,experience, IconData flightTakeoff) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Row(
           children: <Widget>[
             Container(
               padding: EdgeInsets.fromLTRB(0, 0  ,30,0),
               width: 60,
-              child: Icon(Icons.airplanemode_active),
+              child: Icon(Icons.airplanemode_active,color: Colors.black,),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   walk,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                 ),
                 Text(
                   experience,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
@@ -57,7 +64,8 @@ class AdaniAirport extends StatelessWidget{
         ),
         Container(
           width: 20,
-          child: Icon(Icons.airplanemode_active),
+          padding: EdgeInsets.all(30),
+          child: Icon(Icons.airplanemode_active,color: Colors.black,),
         ),
       ],
     );

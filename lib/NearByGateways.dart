@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterscreen/model/NearByGatewayModel.dart';
 
 class NearByGateways extends StatelessWidget {
-  static const primaryDarkColor = Colors.grey;
-  var gatewaysCategories = [
+  final primaryDarkColor = Colors.grey;
+  final gatewaysCategories = [
     NearBygatewayModel(
         image: 'wee',
         hotelName: 'Taj Holiday Inn',

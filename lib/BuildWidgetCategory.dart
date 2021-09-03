@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterscreen/model/Category.dart';
 
 class BuildWidgetCategory extends StatelessWidget {
-  static const primaryDarkColor = Colors.grey;
+  final primaryDarkColor = Colors.grey;
 
-  var listCategories = [
+  final listCategories = [
     Category(
         title: 'Baggage Information'),
     Category(
@@ -50,7 +50,7 @@ class BuildWidgetCategory extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Text(
                       category.title,
-                      style: Theme.of(context).textTheme.body1!.merge(
+                      style: Theme.of(context).textTheme.bodyText2!.merge(
                         TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
